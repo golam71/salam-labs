@@ -8,11 +8,11 @@
         <a href="/" class="lg:pr-8 text-black inline-flex items-center gap-3">
           <img src="/labs.png" class="h-[50px] w-[50x]" alt="salamlabs.png" />
         </a>
-        <span class="font-bold font-display">Salam Labs</span>
+        <span class="font-bold hidden sm:block font-display">Salam Labs</span>
         <button
+        onclick="toggleNav()"
           class="sm:hidden"
-          @click="open = !open"
-          class="inline-flex items-center justify-center p-2 text-slate-400 hover:text-black focus:outline-none focus:text-black lg:hidden"
+          class="flex items-center justify-center p-2 text-slate-400 hover:text-black focus:outline-none focus:text-black lg:hidden"
         >
           <svg
             class="w-6 h-6"
@@ -21,14 +21,14 @@
             viewBox="0 0 24 24"
           >
             <path
-              :class="{'hidden': open, 'inline-flex': !open }"
+
               class="inline-flex"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"></path>
             <path
-              :class="{'hidden': !open, 'inline-flex': open }"
+
               class="hidden"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -37,9 +37,10 @@
           </svg>
         </button>
       </div>
+      <!-- ll        :class="{'flex': open, 'hidden': !open}" -->
       <nav
-        :class="{'flex': open, 'hidden': !open}"
-        class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row"
+        id="nav"
+        class="flex flex-col hidden items-center flex-grow   sm:flex sm:justify-end sm:flex-row"
       >
         <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
@@ -96,3 +97,12 @@
     </div>
   </div>
 </section>
+
+
+<script is:inline>
+//write js code for toggling on and off the nav-menu
+function toggleNav() {
+  console.log ("toggleNav")
+  document.getElementById("nav").classList.toggle("hidden");
+}
+</script>
