@@ -1,6 +1,4 @@
-# Astro & Tailwind CSS Starter Kit
 
-by https://lexingtonthemes.com
 
 ## Template Integrations
 - @astrojs/tailwind - https://docs.astro.build/en/guides/integrations-guide/tailwind/
